@@ -1,11 +1,11 @@
 import React from "react";
 
-const Page1 = () => {
+const TelegramItem = () => {
   return (
     <div>
-      <h1>PAGE 1</h1>
+      <h1>TelegramItem</h1>
     </div>
   );
 };
 
-export default Page1;
+export default TelegramItem;

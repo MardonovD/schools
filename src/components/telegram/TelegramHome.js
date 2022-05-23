@@ -1,11 +1,17 @@
 import React from "react";
-
-const Home = () => {
+import TelegramDescription from "./TelegramDescription";
+import TelegramItem from "./TelegramItem";
+import TelegramLeftMenu from "./TelegramLeftMenu";
+import TelegramNews from "./TelegramNews";
+const TelegramHome = () => {
   return (
-    <div>
-      <h1>HOME PAGE</h1>
+    <div className="d-flex justify-content-between">
+      <TelegramLeftMenu />
+
+      <TelegramNews />
+      <TelegramDescription />
     </div>
   );
 };
 
-export default Home;
+export default TelegramHome;
