@@ -1,54 +1,29 @@
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { UserAction } from "../redux/actions/actionDec";
+// import ActionType from "../redux/contants/action-type";
+import { useEffect } from "react";
 import React from "react";
+import TelegramItem from "./TelegramItem";
 
 const TelegramLeftMenu = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state);
+  console.log(users);
+  const userAxios = async () => {
+    const respons = await axios.get("https://fakestoreapi.com/users");
+    dispatch(UserAction(respons));
+  };
+
+  useEffect(() => {
+    userAxios();
+  }, []);
+
   return (
-    <div>
+    <div className="column ">
       <input placeholder="search" className="form-control" />
-      <div className="ui items">
-        <div className="item">
-          <a className="ui tiny image">
-            <img src="/images/avatar/large/stevie.jpg" />
-          </a>
-          <div className="content">
-            <a className="header">Stevie Feliciano</a>
-            <div className="description">
-              <p>
-                Stevie Feliciano is a <a>library scientist</a> living in New
-                York City. She likes to spend her time reading, running, and
-                writing.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <a className="ui tiny image">
-            <img src="/images/avatar/large/veronika.jpg" />
-          </a>
-          <div className="content">
-            <a className="header">Veronika Ossi</a>
-            <div className="description">
-              <p>
-                Veronika Ossi is a set designer living in New York who{" "}
-                <a>enjoys</a> kittens, music, and partying.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <a className="ui tiny image">
-            <img src="/images/avatar/large/jenny.jpg" />
-          </a>
-          <div className="content">
-            <a className="header">Jenny Hess</a>
-            <div className="description">
-              <p>
-                Jenny is a student studying Media Management at
-                <a>the New School</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TelegramItem />
     </div>
   );
 };

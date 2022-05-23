@@ -1,7 +1,7 @@
 import React from "react";
 
 const TelegramDescription = () => {
-  return <div>TelegramDescription</div>;
+  return <div className="column">TelegramDescription</div>;
 };
 
 export default TelegramDescription;

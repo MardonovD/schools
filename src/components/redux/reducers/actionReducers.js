@@ -1,6 +1,6 @@
 import ActionType from "../contants/action-type";
 
-export const ActionReducers = (state = 0, { type, payload }) => {
+export const ActionReducers = (state = [], { type, payload }) => {
   switch (type) {
     case ActionType.USER_API:
       return { ...state, payload };
@@ -10,5 +10,3 @@ export const ActionReducers = (state = 0, { type, payload }) => {
       return state;
   }
 };
-
-

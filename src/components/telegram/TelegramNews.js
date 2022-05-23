@@ -2,7 +2,7 @@ import React from "react";
 
 const TelegramNews = () => {
   return (
-    <div>
+    <div className="column">
       <h1>Telegram news </h1>
     </div>
   );

@@ -5,8 +5,8 @@ import TelegramLeftMenu from "./TelegramLeftMenu";
 import TelegramNews from "./TelegramNews";
 const TelegramHome = () => {
   return (
-    <div className="d-flex justify-content-between">
-      <TelegramLeftMenu />
+    <div className="ui three column grid">
+      <TelegramLeftMenu  />
 
       <TelegramNews />
       <TelegramDescription />
