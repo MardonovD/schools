@@ -2,9 +2,9 @@ import React from "react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Page1 from "./Page1";
-import Home from "./Home";
-import Page2 from "./Page2";
+import Page1 from "./telegram/TelegramItem";
+import Home from "./telegram/TelegramHome";
+import Page2 from "./telegram/TelegramLeftMenu";
 
 const App = () => {
   return (
