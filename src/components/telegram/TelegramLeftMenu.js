@@ -9,8 +9,9 @@ import TelegramItem from "./TelegramItem";
 
 const TelegramLeftMenu = () => {
   const dispatch = useDispatch();
+
   const users = useSelector((state) => state);
-  console.log(users);
+
   const userAxios = async () => {
     const respons = await axios.get("https://fakestoreapi.com/users");
     dispatch(UserAction(respons));
@@ -18,6 +19,8 @@ const TelegramLeftMenu = () => {
 
   useEffect(() => {
     userAxios();
+
+    console.log(users.allReducers.payload);
   }, []);
 
   return (
