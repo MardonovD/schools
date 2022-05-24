@@ -1,12 +1,27 @@
 import React from "react";
 import { useEffect } from "react";
 import "./style/style.css";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import axios from "axios";
+import { UserId } from "../redux/actions/actionDec";
 
 const TelegramItem = () => {
   const users = useSelector((state) => state.allReducers.payload?.data);
+  const params = useParams().productId;
+
   const image = "https://i.pravatar.cc";
+  const dispatch = useDispatch();
+  const axiosId = async () => {
+    const resId = await axios.get(`https://fakestoreapi.com/users/${params}`);
+    const resData = resId.data;
+
+    dispatch(UserId(resData));
+  };
+  useEffect(() => {
+    axiosId();
+  }, []);
 
   const renderList = () => {
     return users?.map((user, index) => {

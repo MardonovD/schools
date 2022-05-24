@@ -11,3 +11,9 @@ export const DokonAction = (dokon) => {
     payload: dokon,
   };
 };
+export const UserId = (user) => {
+  return {
+    type: ActionType.USER_DESCRIPTION,
+    payload: user,
+  };
+};
