@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<TelegramHome />} />
-          {/* <Route path="desc" element={<TelegramDescription />} /> */}
+          <Route path="/product/:productId" element={<TelegramHome />} />
           {/* <Route path="page2" element={<Page2 />} /> */}
         </Routes>
       </BrowserRouter>
