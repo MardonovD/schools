@@ -11,7 +11,7 @@ const TelegramLeftMenu = () => {
   const dispatch = useDispatch();
 
   const users = useSelector((state) => state);
-
+  console.log(users);
   const userAxios = async () => {
     const respons = await axios.get("https://fakestoreapi.com/users");
     dispatch(UserAction(respons));
@@ -24,7 +24,7 @@ const TelegramLeftMenu = () => {
   }, []);
 
   return (
-    <div className="column ">
+    <div className="column " style={{ overflowY: "scroll" }}>
       <input placeholder="search" className="form-control" />
       <TelegramItem />
     </div>

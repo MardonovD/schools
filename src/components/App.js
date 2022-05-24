@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import TelegramItem from "./telegram/TelegramItem";
 import TelegramHome from "./telegram/TelegramHome";
 import TelegramLeftMenu from "./telegram/TelegramLeftMenu";
+import TelegramDescription from "./telegram/TelegramDescription";
 
 const App = () => {
   return (
@@ -12,8 +13,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<TelegramHome />} />
-          {/* <Route path="page1" element={< te/>} />
-          <Route path="page2" element={<Page2 />} /> */}
+          {/* <Route path="desc" element={<TelegramDescription />} /> */}
+          {/* <Route path="page2" element={<Page2 />} /> */}
         </Routes>
       </BrowserRouter>
     </Provider>
