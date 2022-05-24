@@ -9,24 +9,13 @@ import { UserId } from "../redux/actions/actionDec";
 
 const TelegramItem = () => {
   const users = useSelector((state) => state.allReducers.payload?.data);
-  const params = useParams().productId;
 
   const image = "https://i.pravatar.cc";
-  const dispatch = useDispatch();
-  const axiosId = async () => {
-    const resId = await axios.get(`https://fakestoreapi.com/users/${params}`);
-    const resData = resId.data;
-
-    dispatch(UserId(resData));
-  };
-  useEffect(() => {
-    axiosId();
-  }, []);
 
   const renderList = () => {
     return users?.map((user, index) => {
       return (
-        <a href={`/product/${index}`} key={index}>
+        <a href={`/product/${index + 1}`} key={index}>
           <div key={user.id}>
             <div className="ui items p-1 table-hover" id="csss" key={user.id}>
               <div className="item">
